@@ -88,7 +88,7 @@ ADD apache_mapcache.conf /etc/apache2/conf-available/mapcache.conf
 RUN ln -s /etc/apache2/conf-available/mapcache.conf /etc/apache2/conf-enabled/mapcache.conf
 
 # Expose MapServer
-EXPOSE 80
+EXPOSE 5432 80
 
 # Add VOLUMEs to allow backup of config, logs and databases
 VOLUME  ["/data", "/etc/mapserver", "/var/log/mapserver", "/var/lib/mapcache", "/var/log/apache"]
