@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- see the accompanying mapcache.xml.sample for a fully commented configuration file -->
+
+<mapcache>
+   <cache name="disk" type="disk">
+      <base>/tmp</base>
+      <symlink_blank/>
+   </cache>
+
+   <format name="jpeg" type="JPEG">
+     <quality>70</quality>
+     <photometric>ycbcr</photometric>
+   </format>
+
+   <grid name="testgrid">
+     <metadata>
+         <title>test grid for grandlyon </title>
+      </metadata>
+      <srs>EPSG:3946</srs>
+      <size>256 256</size>
+      <extent>1.83e+06 5.151e+06 1.869e+06 5.195e+06</extent>
+      <!--extent>1780810 5111630 1905820 5242220</extent-->
+      <resolutions>2048 1024 512 256 128 64 32 16 8 4 2 1 0.5 0.25 0.125 0.0625</resolutions>
+      <units>m</units>
+   </grid>
+
+   <source name="grandlyon_mnt" type="wms">
+      <getmap>
+         <params>
+            <FORMAT>image/jpeg</FORMAT>
+            <LAYERS>MNT2009_Altitude_10m_CC46</LAYERS>
+         </params>
+      </getmap>
+      <http>
+         <url>https://download.data.grandlyon.com/wms/grandlyon</url>
+      </http>
+   </source>
+   <source name="grandlyon_ortho" type="wms">
+      <getmap>
+         <params>
+            <FORMAT>image/jpeg</FORMAT>
+            <LAYERS>Ortho2009_vue_ensemble_16cm_CC46</LAYERS>
+         </params>
+      </getmap>
+      <http>
+         <url>https://download.data.grandlyon.com/wms/grandlyon</url>
+      </http>
+   </source>
+   
+   <tileset name="mnt">
+      <source>grandlyon_mnt</source>
+      <cache>disk</cache>
+      <grid>testgrid</grid>
+      <grid>g</grid>
+      <format>jpeg</format>
+      <metatile>5 5</metatile>
+      <metabuffer>10</metabuffer>
+      <expires>3600</expires>
+
+   </tileset>
+
+   <tileset name="ortho">
+      <source>grandlyon_ortho</source>
+      <cache>disk</cache>
+      <grid>testgrid</grid>
+      <grid>g</grid>
+      <format>jpeg</format>
+      <metatile>5 5</metatile>
+      <metabuffer>10</metabuffer>
+      <expires>3600</expires>
+   </tileset>
+
+   <default_format>jpeg</default_format>
+
+   <service type="wms" enabled="true">
+      <full_wms>assemble</full_wms>
+      <resample_mode>bilinear</resample_mode>
+      <format>jpeg</format>
+      <maxsize>4096</maxsize>
+   </service>
+   <service type="wmts" enabled="true"/>
+   <service type="tms" enabled="true"/>
+   <service type="kml" enabled="true"/>
+   <service type="gmaps" enabled="true"/>
+   <service type="ve" enabled="true"/>
+   <service type="mapguide" enabled="true"/>
+   <service type="demo" enabled="true"/>
+
+   <errors>report</errors>
+   <lock_dir>/tmp</lock_dir>
+
+</mapcache>
