@@ -11,7 +11,7 @@
 # - TinyOWS trunk with 3D support
 # - a WeGL 3D client
 #
-# Version 0.1
+# Version 0.2
 
 # We start from oslandia/pggis which has all
 # database components ready
