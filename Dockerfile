@@ -41,8 +41,8 @@ RUN apt-get install -y libapache2-mod-mapcache apache2 apache2-utils cgi-mapserv
 # == Compile additional softwares ==
 
 # Compile TinyOWS
-RUN git clone https://github.com/mapserver/tinyows.git
-RUN cd tinyows && autoconf && ./configure --with-shp2pgsql=/usr/lib/postgresql/9.4/bin/shp2pgsql && make && make install
+RUN git clone https://github.com/Oslandia/tinyows.git
+RUN cd tinyows && autoconf && ./configure --with-shp2pgsql=/usr/lib/postgresql/9.4/bin/shp2pgsql && make && make install && cp tinyows /usr/lib/cgi-bin/tinyows
 # cleanup
 RUN rm -Rf tinyows 
 
@@ -78,6 +78,12 @@ RUN a2enmod mapcache && a2enmod cgi
 # Add any Apache configuration here :
 # ADD tinyows.conf /etc/apache2/sites-available/001-tinyows.conf
 # RUN ln -s /etc/apache2/etc/apache2/sites-enabled/
+
+# Add TinyOWS configuration
+ADD tinyows.xml /etc/tinyows.xml
+
+# Configure MapCache
+ADD mapcache.xml /etc/mapcache.xml
 
 # Expose MapServer
 EXPOSE 80
