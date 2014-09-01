@@ -83,7 +83,9 @@ RUN a2enmod mapcache && a2enmod cgi
 ADD tinyows.xml /etc/tinyows.xml
 
 # Configure MapCache
-ADD mapcache.xml /etc/mapcache.xml
+ADD mapcache.xml /var/www/mapcache.xml
+ADD apache_mapcache.conf /etc/apache2/conf-available/mapcache.conf
+RUN ln -s /etc/apache2/conf-available/mapcache.conf /etc/apache2/conf-enabled/mapcache.conf
 
 # Expose MapServer
 EXPOSE 80
@@ -91,6 +93,7 @@ EXPOSE 80
 # Add VOLUMEs to allow backup of config, logs and databases
 VOLUME  ["/data", "/etc/mapserver", "/var/log/mapserver", "/var/lib/mapcache", "/var/log/apache"]
 
+RUN mkdir /data/cache && chmod 777 /data/cache
 
 # ---------- Final cleanup --------------
 #
