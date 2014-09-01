@@ -25,8 +25,6 @@ ENV HOME /root
 # Use baseimage-docker's init system.
 CMD ["/sbin/my_init"]
 
-# ignore these lines #gitignore
-RUN echo 'Acquire::http { Proxy "http://172.17.42.1:3142"; };' >> /etc/apt/apt.conf.d/01prox #gitignore
 
 # -------------- Installation --------------
 
