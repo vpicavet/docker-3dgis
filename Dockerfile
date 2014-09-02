@@ -74,8 +74,8 @@ RUN echo /var/log/apache2 > /etc/container_environment/APACHE_LOG_DIR
 RUN a2enmod mapcache && a2enmod cgi
 
 # Add any Apache configuration here :
-# ADD tinyows.conf /etc/apache2/sites-available/001-tinyows.conf
-# RUN ln -s /etc/apache2/etc/apache2/sites-enabled/
+ADD apache_datawww.conf /etc/apache2/sites-available/001-datawww.conf
+RUN ln -s /etc/apache2/sites-available/001-datawww.conf /etc/apache2/sites-enabled/
 
 # Add TinyOWS configuration
 ADD tinyows.xml /etc/tinyows.xml
