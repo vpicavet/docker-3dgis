@@ -76,6 +76,13 @@
          title="textured_geometry" />
 
   <layer retrievable="1"
+	 writable="0"
+	 ns_prefix="tows"
+	 ns_uri="http://www.tinyows.org/"
+         name="textured_citygml"
+         title="textured_citygml" />
+
+  <layer retrievable="1"
 	 writable="1"
 	 ns_prefix="tows"
 	 ns_uri="http://www.tinyows.org/"
