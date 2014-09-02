@@ -19,10 +19,32 @@
 	 writable="0"
 	 ns_prefix="tows"
 	 ns_uri="http://www.tinyows.org/"
-         include_items="hfacade,lod0"
          name="toitures_lod0"
          title="toitures_lod0"
-         table="toitures"
+         />
+
+  <layer retrievable="1"
+	 writable="0"
+	 ns_prefix="tows"
+	 ns_uri="http://www.tinyows.org/"
+         name="toitures_lod1"
+         title="toitures_lod1"
+         />
+
+  <layer retrievable="1"
+	 writable="0"
+	 ns_prefix="tows"
+	 ns_uri="http://www.tinyows.org/"
+         name="toitures_lod2"
+         title="toitures_lod2"
+         />
+
+  <layer retrievable="1"
+	 writable="0"
+	 ns_prefix="tows"
+	 ns_uri="http://www.tinyows.org/"
+         name="toitures_lod3"
+         title="toitures_lod3"
          />
 
   <layer retrievable="1"
