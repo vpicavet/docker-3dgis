@@ -52,6 +52,31 @@
          <url>https://download.data.grandlyon.com/wms/grandlyon</url>
       </http>
    </source>
+
+   <source name="grandlyon_plan" type="wms">
+      <getmap>
+         <params>
+            <FORMAT>image/png</FORMAT>
+            <LAYERS>PlanGuide_VueEnsemble_625cm_CC46 </LAYERS>
+         </params>
+      </getmap>
+      <http>
+         <url>https://download.data.grandlyon.com/wms/grandlyon</url>
+      </http>
+   </source>
+  
+   <source name="grandlyon_no2" type="wms">
+      <getmap>
+         <params>
+            <FORMAT>image/jpeg</FORMAT>
+            <LAYERS>Carte_agglo_Lyon_NO2_2012</LAYERS>
+         </params>
+      </getmap>
+      <http>
+         <url>https://download.data.grandlyon.com/wms/smartdata</url>
+         <connection_timeout>30</connection_timeout>
+      </http>
+   </source>
    
    <tileset name="mnt">
       <source>grandlyon_mnt</source>
@@ -64,6 +89,15 @@
       <expires>3600</expires>
    </tileset>
 
+   <tileset name="plan">
+      <source>grandlyon_plan</source>
+      <cache>disk</cache>
+      <grid>lyon_3946</grid>
+      <grid>g</grid>
+      <format>png</format>
+      <metatile>5 5</metatile>
+      <metabuffer>10</metabuffer>
+      <expires>3600</expires>
    </tileset>
 
    <tileset name="ortho">
@@ -72,6 +106,17 @@
       <grid>lyon_3946</grid>
       <grid>g</grid>
       <format>jpeg</format>
+      <metatile>5 5</metatile>
+      <metabuffer>10</metabuffer>
+      <expires>3600</expires>
+   </tileset>
+
+   <tileset name="no2">
+      <source>grandlyon_no2</source>
+      <cache>disk</cache>
+      <grid>lyon_3946</grid>
+      <grid>g</grid>
+      <format>png</format>
       <metatile>5 5</metatile>
       <metabuffer>10</metabuffer>
       <expires>3600</expires>
