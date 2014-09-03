@@ -17,7 +17,7 @@
      <photometric>ycbcr</photometric>
    </format>
 
-   <grid name="testgrid">
+   <grid name="lyon_3946">
      <metadata>
          <title>test grid for grandlyon </title>
       </metadata>
@@ -40,6 +40,7 @@
          <url>https://download.data.grandlyon.com/wms/grandlyon</url>
       </http>
    </source>
+
    <source name="grandlyon_ortho" type="wms">
       <getmap>
          <params>
@@ -55,19 +56,20 @@
    <tileset name="mnt">
       <source>grandlyon_mnt</source>
       <cache>disk</cache>
-      <grid>testgrid</grid>
+      <grid>lyon_3946</grid>
       <grid>g</grid>
       <format>jpeg</format>
       <metatile>5 5</metatile>
       <metabuffer>10</metabuffer>
       <expires>3600</expires>
+   </tileset>
 
    </tileset>
 
    <tileset name="ortho">
       <source>grandlyon_ortho</source>
       <cache>disk</cache>
-      <grid>testgrid</grid>
+      <grid>lyon_3946</grid>
       <grid>g</grid>
       <format>jpeg</format>
       <metatile>5 5</metatile>
