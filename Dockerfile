@@ -58,8 +58,12 @@ RUN apt-get remove -y --purge autoconf build-essential cmake docbook-mathml docb
 # additional compilation packages
 RUN apt-get remove -y --purge automake m4 make
 
-# ---------- SETUP --------------
+# ---------- Final cleanup --------------
+#
+# Clean up APT when done.
+RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
+# ---------- SETUP --------------
 
 # Add Apache/MapServer daemon
 RUN mkdir /etc/service/apache2
@@ -81,6 +85,7 @@ RUN ln -s /etc/apache2/sites-available/001-datawww.conf /etc/apache2/sites-enabl
 ADD tinyows.xml /etc/tinyows.xml
 
 # Configure MapCache
+RUN mkdir /data/cache && chmod 777 /data/cache
 ADD mapcache.xml /var/www/mapcache.xml
 ADD apache_mapcache.conf /etc/apache2/conf-available/mapcache.conf
 RUN ln -s /etc/apache2/conf-available/mapcache.conf /etc/apache2/conf-enabled/mapcache.conf
@@ -91,10 +96,4 @@ EXPOSE 5432 80
 # Add VOLUMEs to allow backup of config, logs and databases
 VOLUME  ["/data", "/etc/mapserver", "/var/log/mapserver", "/var/lib/mapcache", "/var/log/apache"]
 
-RUN mkdir /data/cache && chmod 777 /data/cache
-
-# ---------- Final cleanup --------------
-#
-# Clean up APT when done.
-RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
