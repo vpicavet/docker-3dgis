@@ -7,7 +7,11 @@
        <base>/data/cache</base>
       <symlink_blank/>
    </cache>
-
+   
+   <format name="png" type ="PNG">
+    <compression>best</compression>
+   </format>
+   
    <format name="jpeg" type="JPEG">
      <quality>70</quality>
      <photometric>ycbcr</photometric>
