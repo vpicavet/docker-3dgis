@@ -139,6 +139,7 @@
    <service type="demo" enabled="true"/>
 
    <errors>report</errors>
+   <log_level>warn</log_level>
    <lock_dir>/data/cache</lock_dir>
 
 </mapcache>
