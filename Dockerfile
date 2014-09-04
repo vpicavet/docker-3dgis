@@ -85,7 +85,7 @@ RUN ln -s /etc/apache2/sites-available/001-datawww.conf /etc/apache2/sites-enabl
 ADD tinyows.xml /etc/tinyows.xml
 
 # Configure MapCache
-RUN mkdir /data/cache && chmod 777 /data/cache
+RUN mkdir -p /data/cache && chmod 777 /data/cache
 ADD mapcache.xml /var/www/mapcache.xml
 ADD apache_mapcache.conf /etc/apache2/conf-available/mapcache.conf
 RUN ln -s /etc/apache2/conf-available/mapcache.conf /etc/apache2/conf-enabled/mapcache.conf
