@@ -10,7 +10,7 @@
 	 writable="0"
 	 ns_prefix="tows"
 	 ns_uri="http://www.tinyows.org/"
-         include_items="hfacade,geom"
+         include_items="hfacade,geom,no2_red,no2_green,no2_blue,geom"
          name="toitures"
          title="toitures"
          />
