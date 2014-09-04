@@ -70,9 +70,9 @@ RUN mkdir /etc/service/apache2
 ADD apache2.sh /etc/service/apache2/run
 
 # Add Apache Environment variables
-RUN echo www-data > /etc/container_environment/APACHE_RUN_USER
-RUN echo www-data > /etc/container_environment/APACHE_RUN_GROUP
-RUN echo /var/log/apache2 > /etc/container_environment/APACHE_LOG_DIR
+RUN echo www-data > /etc/container_environment/APACHE_RUN_USER && \
+    echo www-data > /etc/container_environment/APACHE_RUN_GROUP && \
+    echo /var/log/apache2 > /etc/container_environment/APACHE_LOG_DIR
 
 # Activate needed Apache modules 
 RUN a2enmod mapcache && a2enmod cgi
