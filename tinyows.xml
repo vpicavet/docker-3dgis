@@ -11,40 +11,8 @@
 	 ns_prefix="tows"
 	 ns_uri="http://www.tinyows.org/"
          include_items="hfacade,geom,no2_red,no2_green,no2_blue,geom"
-         name="toitures"
-         title="toitures"
-         />
-
-  <layer retrievable="1"
-	 writable="0"
-	 ns_prefix="tows"
-	 ns_uri="http://www.tinyows.org/"
-         name="toitures_lod0"
-         title="toitures_lod0"
-         />
-
-  <layer retrievable="1"
-	 writable="0"
-	 ns_prefix="tows"
-	 ns_uri="http://www.tinyows.org/"
-         name="toitures_lod1"
-         title="toitures_lod1"
-         />
-
-  <layer retrievable="1"
-	 writable="0"
-	 ns_prefix="tows"
-	 ns_uri="http://www.tinyows.org/"
-         name="toitures_lod2"
-         title="toitures_lod2"
-         />
-
-  <layer retrievable="1"
-	 writable="0"
-	 ns_prefix="tows"
-	 ns_uri="http://www.tinyows.org/"
-         name="toitures_lod3"
-         title="toitures_lod3"
+         name="roofs"
+         title="roofs"
          />
 
   <layer retrievable="1"
@@ -53,20 +21,6 @@
 	 ns_uri="http://www.tinyows.org/"
          name="arrondissements"
          title="arrondissements" />
-
-  <layer retrievable="1"
-	 writable="1"
-	 ns_prefix="tows"
-	 ns_uri="http://www.tinyows.org/"
-         name="rues"
-         title="rues" />
-
-  <layer retrievable="1"
-	 writable="1"
-	 ns_prefix="tows"
-	 ns_uri="http://www.tinyows.org/"
-         name="toilettes_publiques"
-         title="toilettes_publiques" />
 
   <layer retrievable="1"
 	 writable="1"
@@ -83,9 +37,16 @@
          title="textured_citygml" />
 
   <layer retrievable="1"
+	 writable="0"
+	 ns_prefix="tows"
+	 ns_uri="http://www.tinyows.org/"
+         name="velov_stations"
+         title="velov_stations" />
+
+  <layer retrievable="1"
 	 writable="1"
 	 ns_prefix="tows"
 	 ns_uri="http://www.tinyows.org/"
-         name="velov"
-         title="velov" />
+         name="lands"
+         title="lands" />
 </tinyows>
