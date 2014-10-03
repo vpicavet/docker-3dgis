@@ -46,7 +46,13 @@ Test the setup
 
 You can test if everything works by pointing a web browser in the host to this URL, using port mapping :
 
-    http://localhost:80/client.html
+    http://localhost:80
+
+Try MapCache, MapServer or TinyOWS :
+
+    http://localhost:80/mapcache
+    http://localhost:80/cgi-bin/mapserv
+    http://localhost:80/cgi-bin/tinyows
 
 Connect to the database
 -----------------------
