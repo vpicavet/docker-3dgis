@@ -39,7 +39,8 @@ RUN apt-get install -y libapache2-mod-mapcache apache2 apache2-utils cgi-mapserv
 # == Compile additional softwares ==
 
 # Compile TinyOWS
-RUN git clone https://github.com/mapserver/tinyows.git
+# RUN git clone https://github.com/mapserver/tinyows.git
+RUN git clone https://github.com/Jeremy-Gaillard/tinyows
 RUN cd tinyows && autoconf && ./configure --with-shp2pgsql=/usr/lib/postgresql/9.5/bin/shp2pgsql && make && make install && cp tinyows /usr/lib/cgi-bin/tinyows
 # cleanup
 RUN rm -Rf tinyows 
