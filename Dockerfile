@@ -13,10 +13,10 @@
 #
 # Version 0.3
 
-# We start from oslandia/pggis which has all
+# We start from oslandia/pggish which has all
 # database components ready
 
-FROM oslandia/pggis
+FROM oslandia/pggish
 MAINTAINER Vincent Picavet, vincent.picavet@oslandia.com
 
 # Set correct environment variables.
