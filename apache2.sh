@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # Apache service startup script
 source /etc/apache2/envvars 
 # Process must not be detached
